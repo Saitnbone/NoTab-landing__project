@@ -9,6 +9,11 @@ body {
   min-inline-size: 280px;
   margin: 0 auto;
   overflow-x: hidden;
+  background-color: black;
+  color: white;
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: 500;
 }
 
 h1,
@@ -19,6 +24,7 @@ h5,
 h6,
 p {
   margin: 0;
+  font-family: "Montserrat";
 }
 
 ul {
@@ -34,6 +40,228 @@ picture {
 
 a {
   text-decoration: none;
+  color: white;
+}
+
+.text {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 25px;
+  text-align: left;
+}
+
+/* Стили для блока header */
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 108px;
+  margin: 23px 85px 56px 85px;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header__login {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+}
+
+/* Стили для блока introduction */
+.introduction {
+  margin-inline-start: 100px;
+  margin-inline-end: 163px;
+}
+
+.introduction__about-block {
+  display: flex;
+  justify-content: space-between;
+}
+
+.introduction__text-block {
+  display: flex;
+  flex-direction: column;
+  gap: 129px;
+  max-inline-size: 643px;
+  margin-block-start: 125px;
+}
+
+.introduction__title {
+  font-size: 64px;
+}
+
+.introduction__text {
+  position: relative;
+  font-size: 20px;
+  padding-inline-start: 100px;
+}
+
+.introduction__text::before {
+  content: "";
+  position: absolute;
+  width: 120px;
+  border: 2px solid rgba(255, 255, 255, 1);
+  left: -40px;
+  bottom: 60px;
+  transform: rotate(120deg);
+}
+
+.introduction__text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 50%;
+  width: 125px;
+  height: 125px;
+  background-color: rgba(96, 92, 234, 0.5);
+  filter: blur(50px);
+}
+
+.phone-introduction {
+  inline-size: 400px;
+  block-size: 668;
+}
+
+.introduction__download {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block-start: 74px;
+  margin-block-end: 117px;
+}
+
+.introduction__subtitle {
+  font-size: 35px;
+  line-height: 70px;
+  text-transform: uppercase;
+}
+
+.introduction__download-apps {
+  display: flex;
+  gap: 28px;
+}
+
+/* Стили для блока future */
+.future {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.future__img {
+  transform: rotate(90deg);
+}
+
+.future__title {
+  font-size: 51px;
+}
+
+.future__text-block {
+  max-inline-size: 338px;
+  margin-inline-end: 184px;
+}
+
+/* Стили для блока scanner */
+.scanner {
+  display: flex;
+  justify-content: space-around;
+  margin-block-start: 128px;
+  padding: 55px 40px;
+  /* background-image: url("./images/bg-scanner.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
+
+  background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 1),
+      rgba(0, 0, 0, 0.5) 20%,
+      rgba(0, 0, 0, 0.3) 60%,
+      rgba(0, 0, 0, 1)
+    ),
+    url("./images/bg-scanner.jpg") no-repeat center center/cover;
+}
+
+.scanner__title {
+  font-size: 50px;
+}
+
+.scanner__text-block {
+  max-inline-size: 400px;
+  align-items: end;
+}
+
+/* Стили для блока qr-code */
+.qr-code {
+  margin-block-start: 137px;
+  padding: 55px 40px;
+  /* background-image: url("./images/bg-code.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
+
+  background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 1),
+      rgba(0, 0, 0, 0) 50%,
+      rgba(0, 0, 0, 0) 50%,
+      rgba(0, 0, 0, 1)
+    ),
+    url("./images/bg-code.jpg") no-repeat center center/cover;
+}
+
+/* Стили для блока download-apps */
+.download-apps {
+  display: flex;
+  gap: 33px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-block-start: 152px;
+  margin-block-end: 125px;
+}
+
+.download-apps__title {
+  font-size: 24px;
+  line-height: 33px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.download-apps__block {
+  display: flex;
+  gap: 60px;
+}
+
+/* Стили для блока footer */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin-block-start: 125px;
+  margin-inline-start: 100px;
+  margin-inline-end: 100px;
+  margin-block-end: 74px;
+}
+
+.contact-block {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.email-block {
+  display: flex;
+}
+
+.privacy-policy {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 /* Медиазапросы для проекта */
