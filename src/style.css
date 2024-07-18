@@ -16,6 +16,11 @@ body {
   font-weight: 500;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 h1,
 h2,
 h3,
@@ -44,10 +49,14 @@ a {
 }
 
 .text {
-  font-size: 18px;
+  font-size: clamp(1rem, 0.9643rem + 0.1786vw, 1.125rem);
   font-weight: 400;
   line-height: 25px;
   text-align: left;
+}
+
+.secondary-title {
+  font-size: clamp(1.5rem, 1.0179rem + 2.4107vw, 3.1875rem);
 }
 
 /* Стили для блока header */
@@ -72,15 +81,19 @@ a {
   font-size: 18px;
 }
 
+.header__login:hover {
+  opacity: 0.5;
+}
+
 /* Стили для блока introduction */
 .introduction {
-  margin-inline-start: 100px;
-  margin-inline-end: 163px;
+  margin-inline-start: 40px;
+  margin-inline-end: 40px;
 }
 
 .introduction__about-block {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .introduction__text-block {
@@ -92,12 +105,12 @@ a {
 }
 
 .introduction__title {
-  font-size: 64px;
+  font-size: clamp(2.1875rem, 1.6696rem + 2.5893vw, 4rem);
 }
 
 .introduction__text {
   position: relative;
-  font-size: 20px;
+  font-size: clamp(1rem, 0.9286rem + 0.3571vw, 1.25rem);
   padding-inline-start: 100px;
 }
 
@@ -127,16 +140,24 @@ a {
   block-size: 668;
 }
 
+/* .introduction__download {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-block-start: 40px;
+  margin-block-end: 40px;
+} */
+
 .introduction__download {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  margin-block-start: 74px;
-  margin-block-end: 117px;
+  margin-block-start: 140px;
+  margin-block-end: 40px;
 }
 
 .introduction__subtitle {
-  font-size: 35px;
+  font-size: clamp(1.5rem, 1.4821rem + 0.0893vw, 1.5625rem);
   line-height: 70px;
   text-transform: uppercase;
 }
@@ -155,10 +176,7 @@ a {
 
 .future__img {
   transform: rotate(90deg);
-}
-
-.future__title {
-  font-size: 51px;
+  inline-size: 498px;
 }
 
 .future__text-block {
@@ -170,6 +188,7 @@ a {
 .scanner {
   display: flex;
   justify-content: space-around;
+  align-items: end;
   margin-block-start: 128px;
   padding: 55px 40px;
   /* background-image: url("./images/bg-scanner.jpg");
@@ -191,13 +210,15 @@ a {
   font-size: 50px;
 }
 
-.scanner__text-block {
+/* .scanner__text-block {
   max-inline-size: 400px;
-  align-items: end;
-}
+} */
 
 /* Стили для блока qr-code */
 .qr-code {
+  display: flex;
+  justify-content: space-around;
+  align-items: end;
   margin-block-start: 137px;
   padding: 55px 40px;
   /* background-image: url("./images/bg-code.jpg");
@@ -213,6 +234,22 @@ a {
       rgba(0, 0, 0, 1)
     ),
     url("./images/bg-code.jpg") no-repeat center center/cover;
+}
+
+.text-block {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-inline-size: 412px;
+}
+
+.qr-code__block-title {
+  font-size: 52px;
+}
+
+.qr-code__block-text {
+  font-size: 18px;
+  line-height: 25px;
 }
 
 /* Стили для блока download-apps */
@@ -265,3 +302,127 @@ a {
 }
 
 /* Медиазапросы для проекта */
+
+@media (width <= 1160px) {
+  /* Блок introduction */
+  .introduction__download {
+    gap: 34px;
+    flex-direction: column;
+  }
+
+  /* Блок future */
+  .future {
+    justify-content: space-around;
+  }
+  .future__img {
+    inline-size: 450px;
+    transform: rotate(0deg);
+  }
+  .future__text-block {
+    margin-inline-end: 0;
+  }
+}
+
+@media (width <= 900px) {
+  /* Sections */
+  .section {
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Блок Introduction */
+  /* .introduction__text-block {
+    position: relative;
+  }
+
+  .phone-introduction {
+    position: absolute;
+  } */
+
+  .introduction__download-apps {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .introduction__text-block {
+    gap: 50px;
+  }
+
+  .introduction__text {
+    padding-inline-start: 0;
+  }
+
+  .introduction__text::before {
+    display: none;
+  }
+
+  .introduction__text::after {
+    display: none;
+  }
+
+  /* Блок future */
+  .future {
+    flex-direction: column-reverse;
+  }
+
+  /* Блок scanner */
+  .scanner {
+    flex-direction: column-reverse;
+  }
+
+  /* Блок qr-code */
+  .qr-code {
+    flex-direction: column;
+  }
+}
+
+@media (width <= 760px) {
+  /* Стили для блока header */
+  .header {
+    display: flex;
+    justify-content: space-around;
+    gap: 90px;
+    margin: 20px;
+  }
+
+  .header__logo-img {
+    block-size: 52px;
+    inline-size: 52px;
+  }
+
+  .header__logo-text {
+    block-size: 12px;
+    inline-size: 47px;
+  }
+
+  /* Стили для блока introduction */
+  .phone-introduction {
+    margin-inline-end: -200px;
+    /* s */
+  }
+
+  .download-apps__block {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+  }
+
+  /* Стили для блока footer */
+  .footer {
+    text-align: center;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin: 100px 0 74px 0;
+  }
+
+  .email-block {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
